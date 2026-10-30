@@ -1,4 +1,0 @@
-# Пример. Позже заменишь своими конфигами.
-vless://00000000-0000-4000-8000-000000000001@node1.example.com:443?type=ws&security=tls&sni=node1.example.com&path=%2Fws#Node1
-trojan://secret-password@node3.example.com:443?type=tls&sni=node3.example.com#Node3
-hysteria2://auth-token@node4.example.com:8443?sni=node4.example.com#Node4
