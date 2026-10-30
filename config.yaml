@@ -1,0 +1,32 @@
+fetch:
+  timeout: 25
+  retries: 2
+  user_agent: "Happ/2.6.2 (Linux; Android 14; Pixel 7) okhttp/4.12.0"
+  headers:
+    x-hwid: auto
+    x-device-os: "Android"
+    x-ver-os: "14"
+    x-device-model: "Pixel 7"
+    x-app-version: "2.6.2"
+    accept: "*/*"
+  send_headers_to: all
+
+test:
+  enabled: true
+  concurrency: 24
+  timeout: 8
+  check_url: "http://cp.cloudflare.com/generate_204"
+  retry_failed: 1
+  max_configs: 1500
+  include_untested: true
+
+geo:
+  cache_days: 30
+
+naming:
+  template: "{flag} {country} {index} | @VEXALORIAVPN"
+  sort_by: ping
+
+storage:
+  drop_after_fail_streak: 3
+  max_entries: 5000
