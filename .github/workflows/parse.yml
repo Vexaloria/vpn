@@ -29,6 +29,17 @@ jobs:
           path: cores
           key: cores-${{ runner.os }}-v1
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('parser.py') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: Install curl
+        run: sudo apt-get update && sudo apt-get install -y curl
+
       - name: Run parser
         run: python parser.py
 
@@ -43,3 +54,32 @@ jobs:
             git commit -m "update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git push
           fi
+
+      - name: Notify worker
+        if: success()
+        env:
+          CALLBACK_URL: ${{ secrets.WORKER_CALLBACK_URL }}
+        run: |
+          if [ ! -f output/all.txt ]; then
+            echo "output/all.txt not found — skipping callback"
+            exit 0
+          fi
+          COUNT=$(wc -l < output/all.txt)
+          SIZE=$(stat -c%s output/all.txt)
+          echo "callback: $COUNT lines, $SIZE bytes"
+          B64=$(base64 -w0 output/all.txt)
+          curl -sS -X POST "$CALLBACK_URL" \
+            -H "Content-Type: application/json" \
+            --data-binary "{\"content_b64\":\"$B64\",\"count\":$COUNT,\"size\":$SIZE}" \
+            --max-time 30 \
+            -w "\nHTTP %{http_code}\n"
+
+      - name: Notify worker on failure
+        if: failure()
+        env:
+          CALLBACK_URL: ${{ secrets.WORKER_CALLBACK_URL }}
+        run: |
+          curl -sS -X POST "$CALLBACK_URL" \
+            -H "Content-Type: application/json" \
+            -d '{"status":"failed","run_id":"${{ github.run_id }}"}' \
+            --max-time 15 || true
