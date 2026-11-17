@@ -38548,5 +38548,50 @@
     "country": "Singapore",
     "countryCode": "SG",
     "ts": 1794913428.5344162
+  },
+  "43.206.149.39": {
+    "country": "Japan",
+    "countryCode": "JP",
+    "ts": 1794917027.460966
+  },
+  "69.10.52.92": {
+    "country": "United States",
+    "countryCode": "US",
+    "ts": 1794917027.4609692
+  },
+  "91.132.189.13": {
+    "country": "Turkey",
+    "countryCode": "TR",
+    "ts": 1794917027.4609697
+  },
+  "43.199.67.117": {
+    "country": "Hong Kong",
+    "countryCode": "HK",
+    "ts": 1794917027.4609706
+  },
+  "89.125.234.51": {
+    "country": "Poland",
+    "countryCode": "PL",
+    "ts": 1794917027.4609714
+  },
+  "45.90.99.126": {
+    "country": "Germany",
+    "countryCode": "DE",
+    "ts": 1794917027.460972
+  },
+  "56.10.100.36": {
+    "country": "Singapore",
+    "countryCode": "SG",
+    "ts": 1794917027.4609725
+  },
+  "129.101.106.160": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1794917027.4609733
+  },
+  "163.52.128.76": {
+    "country": "Singapore",
+    "countryCode": "SG",
+    "ts": 1794917027.4609737
   }
 }
