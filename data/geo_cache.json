@@ -45048,5 +45048,50 @@
     "country": "Poland",
     "countryCode": "PL",
     "ts": 1795161839.9161074
+  },
+  "130.17.15.75": {
+    "country": "Germany",
+    "countryCode": "DE",
+    "ts": 1795165425.5008373
+  },
+  "201.24.122.189": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.50084
+  },
+  "80.242.57.69": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.5008411
+  },
+  "194.87.131.9": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.500842
+  },
+  "89.169.44.210": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.5008426
+  },
+  "5.42.105.128": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.5008433
+  },
+  "189.74.106.144": {
+    "country": "Russia",
+    "countryCode": "RU",
+    "ts": 1795165425.5008442
+  },
+  "1.160.16.235": {
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "ts": 1795165425.500845
+  },
+  "153.52.85.208": {
+    "country": "Germany",
+    "countryCode": "DE",
+    "ts": 1795165425.500846
   }
 }
